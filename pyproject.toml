@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "magika-sdk-python"
+version = "1.0.0"
+description = "Enhanced Python SDK for AI-powered file type detection, with async batch processing and enterprise security features"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "gitstq", email = "gitstq@github.com"}
+]
+keywords = ["file-type", "detection", "ai", "ml", "security", "magika"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Filesystems",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "magika>=0.1.0",
+    "aiofiles>=23.0.0",
+    "tqdm>=4.65.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/gitstq/magika-sdk-python"
+Documentation = "https://github.com/gitstq/magika-sdk-python#readme"
+Repository = "https://github.com/gitstq/magika-sdk-python"
+Issues = "https://github.com/gitstq/magika-sdk-python/issues"
+
+[tool.setuptools]
+packages = ["magika_sdk"]
+
+[tool.black]
+line-length = 100
+target-version = ["py38", "py39", "py310", "py311", "py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
